@@ -59,7 +59,7 @@ public final class ClickGui extends Screen {
 		}
 
 		String playerText = "Player | " + playerName;
-		String systemText = "Credits:DL-industries And Devstral(dc name) for updating the mod";
+		String systemText = "Credits:DL-industries And Devstral for updating the mod";
 
 		int screenWidth = mc.getWindow().getScaledWidth();
 		int screenHeight = mc.getWindow().getScaledHeight();
