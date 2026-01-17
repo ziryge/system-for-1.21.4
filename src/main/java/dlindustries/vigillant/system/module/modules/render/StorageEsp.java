@@ -19,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.Heightmap;
 import net.minecraft.world.chunk.WorldChunk;
 import org.lwjgl.opengl.GL11;
 import java.awt.*;
@@ -137,7 +138,7 @@ public final class StorageEsp extends Module implements GameRenderListener, Pack
         for (int x = startX; x <= endX; x++) {
             for (int z = startZ; z <= endZ; z++) {
 
-                for (int y = mc.world.getTopY(); y >= mc.world.getBottomY() + 10; y--) {
+                for (int y = mc.world.getTopY(Heightmap.Type.MOTION_BLOCKING, x, z); y >= mc.world.getBottomY() + 10; y--) {
                     BlockPos pos = new BlockPos(x, y, z);
                     Block block = mc.world.getBlockState(pos).getBlock();
                     if (block == Blocks.ANVIL || block == Blocks.CHIPPED_ANVIL || block == Blocks.DAMAGED_ANVIL) {

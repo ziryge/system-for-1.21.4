@@ -117,8 +117,8 @@ public final class HitOptimizer extends Module implements AttackListener, TickLi
         return item instanceof SwordItem ||
                 item instanceof AxeItem ||
                 item instanceof MaceItem ||
-                item instanceof ElytraItem ||
-                (item instanceof ArmorItem && ((ArmorItem) item).getSlotType() == EquipmentSlot.CHEST);
+                item == Items.ELYTRA ||
+                (item instanceof ArmorItem && item.toString().contains("chestplate"));
     }
 
     private int findSwordSlot() {

@@ -102,7 +102,7 @@ public final class TargetHud extends Module implements HudListener, PacketSendLi
 
 			TextRenderer.drawString(displayName + " §8| §b" + MathUtils.roundToDecimal(player.distanceTo(mc.player), 0.5) + " blocks", context, x + 28, y + 8, Color.WHITE.getRGB());
 			if (entry != null) {
-				PlayerSkinDrawer.draw(context, entry.getSkinTextures().texture(), x + 5, y + 5, 20);
+				PlayerSkinDrawer.draw(context, entry.getSkinTextures(), x + 5, y + 5, 20);
 			}
 			int infoY = y + 35;
 			int lineHeight = 25;

@@ -1,0 +1,149 @@
+
+> Configure project :
+Fabric Loom: 1.9.2
+
+> Task :compileJava
+/home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/utils/rotation/RotatorManager.java:162: error: cannot find symbol
+			serverYaw = packet.getYaw();
+			                  ^
+  symbol:   method getYaw()
+  location: variable packet of type PlayerPositionLookS2CPacket
+/home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/utils/rotation/RotatorManager.java:163: error: cannot find symbol
+			serverPitch = packet.getPitch();
+			                    ^
+  symbol:   method getPitch()
+  location: variable packet of type PlayerPositionLookS2CPacket
+/home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/optimizer/HitOptimizer.java:120: error: cannot find symbol
+                item instanceof ElytraItem ||
+                                ^
+  symbol:   class ElytraItem
+  location: class HitOptimizer
+/home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/optimizer/HitOptimizer.java:121: error: cannot find symbol
+                (item instanceof ArmorItem && ((ArmorItem) item).getSlotType() == EquipmentSlot.CHEST);
+                                                                ^
+  symbol:   method getSlotType()
+  location: class ArmorItem
+/home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/render/TargetHud.java:105: error: incompatible types: Identifier cannot be converted to SkinTextures
+				PlayerSkinDrawer.draw(context, entry.getSkinTextures().texture(), x + 5, y + 5, 20);
+				                                                              ^
+/home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/render/HUD.java:137: error: no suitable method found for drawTexture(Identifier,int,int,int,int,int,int,int,int)
+					context.drawTexture(
+					       ^
+    method DrawContext.drawTexture(Function<Identifier,RenderLayer>,Identifier,int,int,float,float,int,int,int,int,int) is not applicable
+      (actual and formal argument lists differ in length)
+    method DrawContext.drawTexture(Function<Identifier,RenderLayer>,Identifier,int,int,float,float,int,int,int,int) is not applicable
+      (actual and formal argument lists differ in length)
+    method DrawContext.drawTexture(Function<Identifier,RenderLayer>,Identifier,int,int,float,float,int,int,int,int,int,int) is not applicable
+      (actual and formal argument lists differ in length)
+    method DrawContext.drawTexture(Function<Identifier,RenderLayer>,Identifier,int,int,float,float,int,int,int,int,int,int,int) is not applicable
+      (actual and formal argument lists differ in length)
+/home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/client/NineElevenPrevent.java:146: warning: [removal] runFinalization() in System has been deprecated and marked for removal
+				System.runFinalization();
+				      ^
+/home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/mace/DiveBomber.java:73: error: cannot find symbol
+        if (mc.player.isOnGround() && !mc.player.isFallFlying() && isElytraEquipped) {
+                                                ^
+  symbol:   method isFallFlying()
+  location: variable player of type ClientPlayerEntity
+/home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/mace/FireworkMacro.java:63: error: cannot find symbol
+            if (mc.player != null && mc.player.isFallFlying() && !active) {
+                                              ^
+  symbol:   method isFallFlying()
+  location: variable player of type ClientPlayerEntity
+/home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/mace/FireworkMacro.java:73: error: cannot find symbol
+        if (active && !mc.player.isFallFlying()) {
+                                ^
+  symbol:   method isFallFlying()
+  location: variable player of type ClientPlayerEntity
+/home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/mace/KeyWindCharge.java:67: error: cannot find symbol
+                if (result.isAccepted() && result.shouldSwingHand())
+                                                 ^
+  symbol:   method shouldSwingHand()
+  location: variable result of type ActionResult
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+10 errors
+1 warning
+
+> Task :compileJava FAILED
+[Incubating] Problems report is available at: file:///home/Devstral/IdeaProjects/System/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  /home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/render/HUD.java:137: error: no suitable method found for drawTexture(Identifier,int,int,int,int,int,int,int,int)
+  					context.drawTexture(
+  					       ^
+      method DrawContext.drawTexture(Function<Identifier,RenderLayer>,Identifier,int,int,float,float,int,int,int,int,int) is not applicable
+        (actual and formal argument lists differ in length)
+      method DrawContext.drawTexture(Function<Identifier,RenderLayer>,Identifier,int,int,float,float,int,int,int,int) is not applicable
+        (actual and formal argument lists differ in length)
+      method DrawContext.drawTexture(Function<Identifier,RenderLayer>,Identifier,int,int,float,float,int,int,int,int,int,int) is not applicable
+        (actual and formal argument lists differ in length)
+      method DrawContext.drawTexture(Function<Identifier,RenderLayer>,Identifier,int,int,float,float,int,int,int,int,int,int,int) is not applicable
+        (actual and formal argument lists differ in length)
+  /home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/render/TargetHud.java:105: error: incompatible types: Identifier cannot be converted to SkinTextures
+  				PlayerSkinDrawer.draw(context, entry.getSkinTextures().texture(), x + 5, y + 5, 20);
+  				                                                              ^
+  /home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/client/NineElevenPrevent.java:146: warning: [removal] runFinalization() in System has been deprecated and marked for removal
+  				System.runFinalization();
+  				      ^
+  Note: Some input files use unchecked or unsafe operations.
+  Note: Recompile with -Xlint:unchecked for details.
+  Note: Recompile with -Xlint:deprecation for details.
+  Note: Some input files use or override a deprecated API.
+  /home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/utils/rotation/RotatorManager.java:162: error: cannot find symbol
+  			serverYaw = packet.getYaw();
+  			                  ^
+    symbol:   method getYaw()
+    location: variable packet of type PlayerPositionLookS2CPacket
+  /home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/utils/rotation/RotatorManager.java:163: error: cannot find symbol
+  			serverPitch = packet.getPitch();
+  			                    ^
+    symbol:   method getPitch()
+    location: variable packet of type PlayerPositionLookS2CPacket
+  /home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/optimizer/HitOptimizer.java:121: error: cannot find symbol
+                  (item instanceof ArmorItem && ((ArmorItem) item).getSlotType() == EquipmentSlot.CHEST);
+                                                                  ^
+    symbol:   method getSlotType()
+    location: class ArmorItem
+  /home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/mace/DiveBomber.java:73: error: cannot find symbol
+          if (mc.player.isOnGround() && !mc.player.isFallFlying() && isElytraEquipped) {
+                                                  ^
+    symbol:   method isFallFlying()
+    location: variable player of type ClientPlayerEntity
+  /home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/mace/FireworkMacro.java:63: error: cannot find symbol
+              if (mc.player != null && mc.player.isFallFlying() && !active) {
+                                                ^
+    symbol:   method isFallFlying()
+    location: variable player of type ClientPlayerEntity
+  /home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/mace/FireworkMacro.java:73: error: cannot find symbol
+          if (active && !mc.player.isFallFlying()) {
+                                  ^
+    symbol:   method isFallFlying()
+    location: variable player of type ClientPlayerEntity
+  /home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/mace/KeyWindCharge.java:67: error: cannot find symbol
+                  if (result.isAccepted() && result.shouldSwingHand())
+                                                   ^
+    symbol:   method shouldSwingHand()
+    location: variable result of type ActionResult
+  /home/Devstral/IdeaProjects/System/src/main/java/dlindustries/vigillant/system/module/modules/optimizer/HitOptimizer.java:120: error: cannot find symbol
+                  item instanceof ElytraItem ||
+                                  ^
+    symbol:   class ElytraItem
+    location: class HitOptimizer
+  Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+  10 errors
+  1 warning
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights.
+
+BUILD FAILED in 3s
+1 actionable task: 1 executed

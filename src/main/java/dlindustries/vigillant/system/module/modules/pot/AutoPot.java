@@ -99,7 +99,7 @@ public final class AutoPot extends Module implements TickListener {
 				if (lookDown.getValue()) mc.player.setPitch(90F);
 
 				ActionResult result = mc.interactionManager.interactItem(mc.player, Hand.MAIN_HAND);
-				if (result.shouldSwingHand()) mc.player.swingHand(Hand.MAIN_HAND);
+				if (result.isAccepted()) mc.player.swingHand(Hand.MAIN_HAND);
 				throwClock = 0;
 			}
 		} else if (prevSlot != -1 || prevPitch >= 0) {

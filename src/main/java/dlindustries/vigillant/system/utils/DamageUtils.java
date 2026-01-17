@@ -60,7 +60,6 @@ public class DamageUtils {
 	/**
 	 * Low level control of parameters without having to reimplement everything, for addon authors who wish to use their
 	 * own predictions or other systems.
-	 * @see net.minecraft.world.explosion.ExplosionBehavior#calculateDamage(Explosion, Entity)
 	 */
 	public static float explosionDamage(LivingEntity target, Vec3d targetPos, Box targetBox, Vec3d explosionPos, float power, RaycastFactory raycastFactory) {
 		double modDistance = distance(targetPos.x, targetPos.y, targetPos.z, explosionPos.x, explosionPos.y, explosionPos.z);
@@ -173,7 +172,7 @@ public class DamageUtils {
 	 * @see PlayerEntity#attack(Entity)
 	 */
 	public static float getAttackDamage(LivingEntity attacker, LivingEntity target) {
-		float itemDamage = (float) attacker.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE);
+		float itemDamage = (float) attacker.getAttributeValue(EntityAttributes.ATTACK_DAMAGE);
 		DamageSource damageSource = attacker instanceof PlayerEntity player ? mc.world.getDamageSources().playerAttack(player) : mc.world.getDamageSources().mobAttack(attacker);
 		ItemStack stack = attacker.getWeaponStack();
 		float enchantDamage = /*fixme EnchantmentHelper.getDamage(attacker.getWorld() instanceof ServerWorld serverWorld ? serverWorld : null, stack, target, damageSource, itemDamage) - itemDamage*/ 0;
@@ -217,7 +216,7 @@ public class DamageUtils {
 				case HARD     -> damage *= 1.5f;
 			}
 		}
-		damage = DamageUtil.getDamageLeft(entity, damage, damageSource, getArmor(entity), (float) entity.getAttributeValue(EntityAttributes.GENERIC_ARMOR_TOUGHNESS));
+		damage = DamageUtil.getDamageLeft(entity, damage, damageSource, getArmor(entity), (float) entity.getAttributeValue(EntityAttributes.ARMOR_TOUGHNESS));
 		damage = resistanceReduction(entity, damage);
 		damage = protectionReduction(entity, damage, damageSource);
 
@@ -225,7 +224,7 @@ public class DamageUtils {
 	}
 
 	private static float getArmor(LivingEntity entity) {
-		return (float) Math.floor(entity.getAttributeValue(EntityAttributes.GENERIC_ARMOR));
+		return (float) Math.floor(entity.getAttributeValue(EntityAttributes.ARMOR));
 	}
 
 
@@ -244,9 +243,6 @@ public class DamageUtils {
 		return Math.max(damage, 0);
 	}
 
-	/**
-	 * @see Explosion#getExposure(Vec3d, Entity)
-	 */
 	private static float getExposure(Vec3d source, Box box, RaycastFactory raycastFactory) {
 		double xDiff = box.maxX - box.minX;
 		double yDiff = box.maxY - box.minY;

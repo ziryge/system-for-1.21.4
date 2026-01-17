@@ -60,7 +60,7 @@ public class FireworkMacro extends Module implements TickListener {
 
 
         if (keyPressed && !wasKeyPressed) {
-            if (mc.player != null && mc.player.isFallFlying() && !active) {
+            if (mc.player != null && mc.player.isGliding() && !active) {
                 active = true;
             }
         }
@@ -70,7 +70,7 @@ public class FireworkMacro extends Module implements TickListener {
     private void handleFlightMonitoring() {
         if (mc.player == null) return;
 
-        if (active && !mc.player.isFallFlying()) {
+        if (active && !mc.player.isGliding()) {
             reset();
         }
     }

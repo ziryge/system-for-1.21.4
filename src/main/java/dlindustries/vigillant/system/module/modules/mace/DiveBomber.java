@@ -70,7 +70,7 @@ public class DiveBomber extends Module implements TickListener, AttackListener {
                 processEquipState();
             }
         }
-        if (mc.player.isOnGround() && !mc.player.isFallFlying() && isElytraEquipped) {
+        if (mc.player.isOnGround() && !mc.player.isGliding() && isElytraEquipped) {
             if (groundTime == 0) {
                 groundTime = System.currentTimeMillis();
             } else if (System.currentTimeMillis() - groundTime > 1000) {

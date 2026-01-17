@@ -90,10 +90,8 @@ public final class WorldUtils {
 			Item item = stack.getItem();
 			int count = stack.getCount();
 			if (item instanceof ArmorItem armor) {
-				RegistryEntry<ArmorMaterial> matEntry = armor.getMaterial();
-				ArmorMaterial mat = matEntry.value();
-				if (mat.equals(ArmorMaterials.DIAMOND.value())
-						|| mat.equals(ArmorMaterials.NETHERITE.value())) {
+				String name = item.toString();
+				if (name.contains("diamond") || name.contains("netherite")) {
 					valuableArmorCount++;
 				}
 			}
@@ -167,7 +165,7 @@ public final class WorldUtils {
 
 	public static void placeBlock(BlockHitResult blockHit, boolean swingHand) {
 		ActionResult result = mc.interactionManager.interactBlock(mc.player, Hand.MAIN_HAND, blockHit);
-		if (result.isAccepted() && result.shouldSwingHand() && swingHand) mc.player.swingHand(Hand.MAIN_HAND);
+		if (result.isAccepted() && swingHand) mc.player.swingHand(Hand.MAIN_HAND);
 	}
 
 	public static Stream<WorldChunk> getLoadedChunks() {
@@ -227,11 +225,8 @@ public final class WorldUtils {
 	}
 
 	public static boolean isTool(ItemStack itemStack) {
-		if (!(itemStack.getItem() instanceof ToolItem)) {
-			return false;
-		}
-		ToolMaterial material = ((ToolItem) itemStack.getItem()).getMaterial();
-		return material == ToolMaterials.DIAMOND || material == ToolMaterials.NETHERITE;
+		String name = itemStack.getItem().toString();
+		return name.contains("diamond") || name.contains("netherite");
 	}
 
 	public static boolean isCrit(PlayerEntity player, Entity target) {
