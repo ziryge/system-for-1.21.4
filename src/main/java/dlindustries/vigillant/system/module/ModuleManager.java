@@ -73,6 +73,7 @@ public final class ModuleManager implements ButtonListener {
 		add(new NameTags());
 		add(new RenderBarrier());
 		add(new SuperVision());
+		add(new FullBright());
 		add(new StorageEsp());
 		add(new ClickGUI());
 		add(new NameProtect());
