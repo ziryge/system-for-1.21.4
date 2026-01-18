@@ -1,4 +1,4 @@
-import package dlindustries.vigillant.system.module.modules.optimizer;
+package dlindustries.vigillant.system.module.modules.optimizer;
 
 import dlindustries.vigillant.system.event.events.PacketSendListener;
 import dlindustries.vigillant.system.event.events.TickListener;
